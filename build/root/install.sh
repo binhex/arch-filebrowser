@@ -98,8 +98,6 @@ source utils.sh
 # Define environment variables to process
 # Format: "VAR_NAME:DEFAULT_VALUE:REQUIRED:MASK"
 env_vars=(
-	"FILEBROWSER_USERNAME:admin:false:false"
-	"FILEBROWSER_PASSWORD:filebrowser:false:true"
 	"FILEBROWSER_BASEURL:/:false:false"
 	"FILEBROWSER_ROOT:/media:false:false"
 	"ENABLE_TLS:no:false:false"

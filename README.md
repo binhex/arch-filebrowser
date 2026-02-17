@@ -20,8 +20,6 @@ docker run -d \
         -v <path for config files>:/config \
         -v <path for files>:/media \
         -v /etc/localtime:/etc/localtime:ro \
-        -e FILEBROWSER_USERNAME=<username> \
-        -e FILEBROWSER_PASSWORD=<password> \
         -e FILEBROWSER_ROOT=</media path to expose> \
         -e FILEBROWSER_BASEURL=<base url> \
         -e ENABLE_TLS=<yes|no> \
@@ -53,8 +51,6 @@ docker run -d \
         -v /apps/docker/filebrowser:/config \
         -v /mnt/user:/media \
         -v /etc/localtime:/etc/localtime:ro \
-        -e FILEBROWSER_USERNAME=admin \
-        -e FILEBROWSER_PASSWORD=filebrowser \
         -e FILEBROWSER_ROOT=/media \
         -e FILEBROWSER_BASEURL=/ \
         -e ENABLE_TLS=no \
