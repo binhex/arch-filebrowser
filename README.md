@@ -20,7 +20,7 @@ docker run -d \
         -v <path for config files>:/config \
         -v <path for files>:/media \
         -v /etc/localtime:/etc/localtime:ro \
-        -e FILEBROWSER_ROOT=</media path to expose> \
+        -e FILEBROWSER_ROOT=<path to expose> \
         -e FILEBROWSER_BASEURL=<base url> \
         -e ENABLE_TLS=<yes|no> \
         -e ENABLE_HEALTHCHECK=<yes|no> \
