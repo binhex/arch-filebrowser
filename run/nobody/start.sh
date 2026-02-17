@@ -46,10 +46,13 @@ else
 	key_option=""
 fi
 
-# run
+# hash the password using filebrowser's built in hashing function
+hashed_password="$("${filebrowser_install_path}/filebrowser" hash "${FILEBROWSER_PASSWORD}")"
+
+# run filebrowser with appropriate options
 "${filebrowser_install_path}/filebrowser" \
 	--username "${FILEBROWSER_USERNAME}" \
-	--password "${FILEBROWSER_PASSWORD}" \
+	--password "${hashed_password}" \
 	--address '0.0.0.0' \
 	--baseURL "${FILEBROWSER_BASEURL}" \
 	--port '8125' \
