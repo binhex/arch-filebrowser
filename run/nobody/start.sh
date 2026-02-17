@@ -56,6 +56,6 @@ fi
 	--root "${FILEBROWSER_ROOT}" \
 	"${cert_option}" \
 	"${key_option}" \
-	--config "${config_path}" \
-	--database "${database_path}" \
+	--config "${config_path}/settings.json" \
+	--database "${database_path}/filebrowser.db" \
 	--cacheDir "${cache_path}"
