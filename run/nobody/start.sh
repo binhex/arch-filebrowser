@@ -57,8 +57,8 @@ hashed_password="$("${filebrowser_install_path}/filebrowser" hash 'filebrowser')
 	--baseURL "${FILEBROWSER_BASEURL}" \
 	--port '8125' \
 	--root "${FILEBROWSER_ROOT}" \
-	"${cert_option}" \
-	"${key_option}" \
+	${cert_option} \
+	${key_option} \
 	--config "${config_path}/settings.json" \
 	--database "${database_path}/filebrowser.db" \
 	--cacheDir "${cache_path}"
