@@ -7,15 +7,17 @@ fi
 
 # define config and database paths
 filebrowser_install_path="/opt/filebrowser"
-config_path="/config/filebrowser"
-cert_path="${config_path}/certs"
-database_path="${config_path}/database"
-cache_path="${config_path}/cache"
+config_root="/config/filebrowser"
+config_path="${config_root}/config"
+cert_path="${config_root}/certs"
+database_path="${config_root}/database"
+cache_path="${config_root}/cache"
 
 # create config, database and cache paths
 mkdir -p \
-	"${cert_path}" \
+	"${config_root}" \
 	"${config_path}" \
+	"${cert_path}" \
 	"${database_path}" \
 	"${cache_path}"
 
@@ -54,6 +56,6 @@ fi
 	--root "${FILEBROWSER_ROOT}" \
 	"${cert_option}" \
 	"${key_option}" \
-	--config "${config_path}/config.json" \
-	--database "${database_path}/filebrowser.db" \
+	--config "${config_path}" \
+	--database "${database_path}" \
 	--cacheDir "${cache_path}"
