@@ -46,6 +46,27 @@ else
 	key_option=""
 fi
 
+# create database if it does not exist
+if [[ ! -f "${database_path}/filebrowser.db" ]]; then
+	"${filebrowser_install_path}/filebrowser" \
+	config init \
+	--config "${config_path}/settings.json" \
+	--database "${database_path}/filebrowser.db"
+fi
+
+# set auth method based on ENABLE_AUTHENTICATION variable
+if [[ "${ENABLE_AUTHENTICATION}" == 'no' ]]; then
+	auth_method="noauth"
+else
+	auth_method="json"
+fi
+
+# set options in config file path
+"${filebrowser_install_path}/filebrowser" \
+	config set --auth.method="${auth_method}" \
+	--config "${config_path}/settings.json" \
+	--database "${database_path}/filebrowser.db"
+
 # hash the initial password using filebrowser's built in hashing function
 hashed_password="$("${filebrowser_install_path}/filebrowser" hash 'filebrowser')"
 

@@ -22,6 +22,7 @@ docker run -d \
         -v /etc/localtime:/etc/localtime:ro \
         -e FILEBROWSER_ROOT=<path to expose> \
         -e FILEBROWSER_BASEURL=<base url> \
+        -e ENABLE_AUTHENTICATION=<yes|no> \
         -e ENABLE_TLS=<yes|no> \
         -e ENABLE_HEALTHCHECK=<yes|no> \
         -e HEALTHCHECK_COMMAND=<command> \
@@ -51,6 +52,7 @@ docker run -d \
         -v /apps/docker/filebrowser:/config \
         -v /mnt/user:/media \
         -v /etc/localtime:/etc/localtime:ro \
+        -e ENABLE_AUTHENTICATION=yes \
         -e FILEBROWSER_ROOT=/media \
         -e FILEBROWSER_BASEURL=/ \
         -e ENABLE_TLS=no \
