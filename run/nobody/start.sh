@@ -46,13 +46,10 @@ else
 	key_option=""
 fi
 
-# create database if it does not exist
-if [[ ! -f "${database_path}/filebrowser.db" ]]; then
-	"${filebrowser_install_path}/filebrowser" \
-	config init \
-	--config "${config_path}/settings.json" \
-	--database "${database_path}/filebrowser.db"
-fi
+# hash the initial password using filebrowser's built in hashing function, this
+# must be done, you cannot just pass the password in plain text, otherwise you
+# will get the error 'invalid credentials' when trying to login to filebrowser
+hashed_password="$("${filebrowser_install_path}/filebrowser" hash 'filebrowser')"
 
 # set auth method based on ENABLE_AUTHENTICATION variable
 if [[ "${ENABLE_AUTHENTICATION}" == 'no' ]]; then
@@ -61,14 +58,14 @@ else
 	auth_method="json"
 fi
 
-# set options in config file path
+# configure options for filebrowser, this must be done BEFORE filebrowser runs,
+# otherwise you recieve the error 'timeout'
+#
+# set authentication method based on ENABLE_AUTHENTICATION variable
 "${filebrowser_install_path}/filebrowser" \
 	config set --auth.method="${auth_method}" \
 	--config "${config_path}/settings.json" \
 	--database "${database_path}/filebrowser.db"
-
-# hash the initial password using filebrowser's built in hashing function
-hashed_password="$("${filebrowser_install_path}/filebrowser" hash 'filebrowser')"
 
 # run filebrowser with appropriate options
 "${filebrowser_install_path}/filebrowser" \
