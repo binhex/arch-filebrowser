@@ -101,6 +101,7 @@ env_vars=(
 	"FILEBROWSER_BASEURL:/:false:false"
 	"FILEBROWSER_ROOT:/media:false:false"
 	"ENABLE_TLS:no:false:false"
+	"ADDITIONAL_PARAMETERS::false:false"
 )
 
 # Process each environment variable

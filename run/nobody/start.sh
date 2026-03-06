@@ -79,4 +79,5 @@ fi
 	${key_option} \
 	--config "${config_path}/settings.json" \
 	--database "${database_path}/filebrowser.db" \
-	--cacheDir "${cache_path}"
+	--cacheDir "${cache_path}" \
+	${ADDITIONAL_PARAMETERS}

@@ -24,6 +24,7 @@ docker run -d \
         -e FILEBROWSER_BASEURL=<base url> \
         -e ENABLE_AUTHENTICATION=<yes|no> \
         -e ENABLE_TLS=<yes|no> \
+        -e ADDITIONAL_PARAMETERS=<cli options> \
         -e ENABLE_HEALTHCHECK=<yes|no> \
         -e HEALTHCHECK_COMMAND=<command> \
         -e HEALTHCHECK_ACTION=<action> \
